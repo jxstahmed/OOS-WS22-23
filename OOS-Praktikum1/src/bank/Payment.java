@@ -5,8 +5,8 @@ public class Payment {
     private String date;                    //Zeitpunkt der Ein- oder Auszahlung
     private String description;             //Beschreibung der Ein- oder Auszahlung
     private double amount;                  //Geldbetrag der Ein- oder Auszahlung
-    private double incomingInterest;        //Zinsen, in positiven prozent, der Einzahlung
-    private double outgoingInterest;        //Zinsen, in positiven prozent, der Auszahlung
+    private double incomingInterest;        //Zinsen, in positiven prozent (als Dezimal), der Einzahlung
+    private double outgoingInterest;        //Zinsen, in positiven prozent (als Dezimal), der Auszahlung
 
     //Getter für die Attribute
     public String getDate()
@@ -45,11 +45,27 @@ public class Payment {
     }
     public void setIncom(double incom)
     {
-        this.incomingInterest = incom;
+        if (0 > incom || incom > 1)
+        {
+            System.out.println("Die Zinsen müssen einen Prozentwert zwischen 0 und 1 haben!");
+            return;
+        }
+        else
+        {
+            this.incomingInterest = incom;
+        }
     }
     public void setOutgo(double outgo)
     {
-        this.outgoingInterest = outgo;
+        if ( 0 > outgo || outgo > 1)
+        {
+            System.out.println("Die Zinsen müssen einen Prozentwert zwischen 0 und 1 haben!");
+            return;
+        }
+        else
+        {
+            this.outgoingInterest = outgo;
+        }
     }
 
 
@@ -63,14 +79,8 @@ public class Payment {
     public Payment(String datum, String beschreibung, double wert, double Incom, double Outgo)
     {
         this(datum, beschreibung, wert);
-
-        if (0 < Incom || Incom > 1 || 0 < Outgo || Outgo > 1)
-        {
-           System.out.println("Die Zinsen müssen einen Prozentwert zwischen 0 und 1 haben!");
-        }
-
-        this.incomingInterest = Incom;
-        this.outgoingInterest = Outgo;
+        this.setIncom(Incom);
+        this.setOutgo(Outgo);
     }
     public Payment(Payment neu) //Copy-Konstruktor
     {
