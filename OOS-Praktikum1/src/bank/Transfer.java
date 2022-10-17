@@ -3,7 +3,7 @@ package bank;
 public class Transfer {
     private String date;                    //Zeitpunkt der Ein- oder Auszahlung
     private String description;             //Beschreibung der Ein- oder Auszahlung
-    private double amount;                  //Geldbetrag der Ein- oder Auszahlung
+    private double amount;                  //Geldbetrag der Ein- oder Auszahlung (Dieser darf nicht negativ sein)
     private String sender;                  //Absender der Überweisung/Zahlung
     private String recipient;               //Empfänger der Überweisung/Zahlung
 
@@ -40,7 +40,15 @@ public class Transfer {
     }
     public void setAmount(double wert)
     {
-        this.amount = wert;
+        if (wert < 0)
+        {
+            System.out.println("Der Betrag darf nicht negativ sein. Bitte Betrag ändern!");
+            return;
+        }
+        else
+        {
+            this.amount = wert;
+        }
     }
     public void setSender(String send)
     {
@@ -55,14 +63,9 @@ public class Transfer {
     //Konstruktor für die Klasse
     public Transfer(String datum, String beschreibung, double wert)
     {
-        if (wert < 0)
-        {
-            System.out.println("Der Betrag darf nicht negativ sein. Bitte Betrag ändern!");
-        }
-
         this.date = datum;
         this.description = beschreibung;
-        this.amount = wert;
+        this.setAmount(wert);
     }
     public Transfer(String datum, String beschreibung, double wert, String von, String fuer)
     {
