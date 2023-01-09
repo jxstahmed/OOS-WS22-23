@@ -1,0 +1,42 @@
+[
+  {
+  "CLASSNAME": "Payment",
+  "INSTANCE": {
+    "incomingInterest": 0.25,
+    "outgoingInterest": 0.3,
+    "date": "09.12.2022",
+    "amount": 321.0,
+    "description": "Payment"
+  }
+},
+  {
+  "CLASSNAME": "Payment",
+  "INSTANCE": {
+    "incomingInterest": 0.25,
+    "outgoingInterest": 0.3,
+    "date": "10.12.2022",
+    "amount": -2500.0,
+    "description": "Payment"
+  }
+},
+  {
+  "CLASSNAME": "OutgoingTransfer",
+  "INSTANCE": {
+    "sender": "Ahmed",
+    "recipient": "Mohammad",
+    "date": "11.12.2022",
+    "amount": 50.0,
+    "description": "Schulden an Mohammad"
+  }
+},
+  {
+  "CLASSNAME": "Payment",
+  "INSTANCE": {
+    "incomingInterest": 0.25,
+    "outgoingInterest": 0.3,
+    "date": "19.01.2023",
+    "amount": -500.0,
+    "description": "Payment"
+  }
+}
+]

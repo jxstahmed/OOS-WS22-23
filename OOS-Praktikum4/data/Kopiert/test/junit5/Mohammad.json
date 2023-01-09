@@ -1,0 +1,12 @@
+[
+  {
+  "CLASSNAME": "IncomingTransfer",
+  "INSTANCE": {
+    "sender": "Ali",
+    "recipient": "Mohammad",
+    "date": "03.03.2000",
+    "amount": 80.0,
+    "description": "Ali für Mohammad; 80"
+  }
+}
+]
