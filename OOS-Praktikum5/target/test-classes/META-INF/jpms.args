@@ -1,0 +1,4 @@
+--patch-module
+com.oos.praktikum05=_
+--add-reads
+com.oos.praktikum05=ALL-UNNAMED

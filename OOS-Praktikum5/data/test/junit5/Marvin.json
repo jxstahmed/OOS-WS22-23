@@ -1,0 +1,12 @@
+[
+  {
+  "CLASSNAME": "OutgoingTransfer",
+  "INSTANCE": {
+    "sender": "Marvin",
+    "recipient": "Ahmed",
+    "date": "30.07.2020",
+    "amount": 1890.0,
+    "description": "Überweisung an Ahmed"
+  }
+}
+]
